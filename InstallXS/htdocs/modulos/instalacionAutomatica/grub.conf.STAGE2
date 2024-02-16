@@ -1,0 +1,10 @@
+default 0
+timeout 30
+chainloader +1
+boot
+splashimage=(hdBUSGRUB,HDDGRUB)/boot/grub/grub-ututo.xpm.gz
+
+title UTUTO XS (26371-ata)
+root (hdBUSGRUB,HDDGRUB)
+kernel /boot/kernel-xs-x86-2.6.37.1-ata init=/linuxrc ramdisk_size=8192 video=vesafb:mtrr,ywrap,800x600 fbcondecor=silent,theme:ututo CONSOLE=/dev/tty1 quiet udev doscsi elevator=cfq real_root=/dev/DEVICEGRUB1 real_resume=swap:/dev/DEVICEGRUBR resume=swap:/dev/DEVICEGRUBR resume2=swap:/dev/DEVICEGRUBR
+initrd /boot/initramfs-xs-x86-2.6.37.1-ata

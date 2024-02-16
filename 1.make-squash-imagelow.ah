@@ -1,0 +1,17 @@
+#!/bin/bash
+# Liberado bajo GPL-2 o posterior
+#
+# En el directorio "source" debe estar el filesystem
+# a comprimir y convertir
+# El directorio "cdimage" debe estar la estructura booteable
+# del CD
+#
+
+rm cdimage/imagelow.squashfs
+sync
+sync
+sync
+
+mksquashfs imagelow cdimage/imagelow.squashfs -b 1048576 -always-use-fragments -comp lzma
+# -no-duplicates
+# -check_data
